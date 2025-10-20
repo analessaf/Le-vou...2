@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin-top: 25px;
+    font-family: "Poppins";
+    margin: 0;
+}
+
+.ativo {
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a:hover {
+    font-weight: bold;
+}
+
+h1 {
+    color: #516EE3;
+    margin: 0;
+}
+
+.carrinho {
+    width: 40px;
+}
+
+.botao_carrinho {
+    border: 0;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #7A7A7F;
+    color: white;
+    margin-top: 60px;
+    padding: 30px;
+    padding-left: 170px;
+    padding-right: 170px;
+}
+
+footer h1 {
+    color: white;
+    font-size: 30px;
+}
+
+.rodape h2 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.formu {
+    border-radius: 30px;
+    border-style: none;
+    background-color: #f8f7f7;
+    border-color: #f8f7f7;
+    padding: 10px;
+}
+
+.form {
+    border-radius: 30px;
+    border-style: none;
+    background-color: #829BFF;
+    color: white;
+    padding: 10px;
+}
+
+.email {
+    background-color: #f8f7f7;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.ft_email {
+    width: 20px;
+    padding-left: 10px;
+}

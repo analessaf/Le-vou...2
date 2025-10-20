@@ -1,0 +1,123 @@
+.article {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-left: 70px;
+  margin-right: 70px;
+  background-color: #829BFF;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.sc_promo {
+    display: flex;
+    flex-direction: column;
+}
+
+.livros {
+    width: 300px;
+}
+
+.cupom {
+    background-color: #FFDA5E;
+    border-radius: 20px;
+    border-style: none;
+    font-size: 25px;
+    font-weight: bold;
+    width: 250px;
+    height: 45px;
+    margin-left: 100px;
+}
+
+.promocao {
+    width: 450px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.h2 {
+    font-weight: 400;
+    margin-left: 90px;
+    margin-right: 70px;
+}
+
+.livro_promo {
+    display: flex;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.promo_livros {
+    width: 130px;
+    border-radius: 8px;
+    margin-left: 30px;
+}
+
+.recomendados {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    background-color: #E4ECFF;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 60px;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    box-shadow: 2px -2px 5px rgba(185, 185, 185, 0.5);
+}
+
+.recomendados h2 {
+    margin-left: 30px;
+}
+
+.recom_livros {
+    width: 180px;
+    height: 267px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.titulos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.titulos p {
+    margin-bottom: 0;
+}
+
+.autores {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: smaller;
+    color: #3E3C3C;
+}
+
+.autores p {
+    margin: 0;
+}
+
+.valores {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: large;
+    font-weight: bold;
+    color: #516EE3;
+    margin-bottom: 20px;
+}
+
+.valores p {
+    margin-top: 10px;
+}
