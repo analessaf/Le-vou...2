@@ -16,7 +16,6 @@ export default function LayoutBase({ children }) {
         {/* 'children' é onde o conteúdo da sua página (page.js) será renderizado */}
         <main>{children}</main>
 
-        {/* 3. Adicione o Footer na base */}
         <Footer />
       </body>
     </html>
