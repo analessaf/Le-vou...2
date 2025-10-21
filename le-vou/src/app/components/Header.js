@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <nav id="site-menu" aria-expanded="false">
             <button className="menu-toggle" aria-label="Abrir menu">
-                <img src="/menu.png" alt="Menu" />
+                <img src="/Index/menu.png" alt="Menu" />
             </button>
             <h1 className="nome-site"> Lê-Vou </h1>
 
@@ -41,7 +41,7 @@ export default function Header() {
             <Link 
               className={`botao_carrinho ${pathname === '/carrinho' ? 'ativo' : ''}`} 
               href="/carrinho">
-                <img className="carrinho" src="/carrinho.png" alt="Carrinho" />
+                <img className="carrinho" src="/Index/carrinho.png" alt="Carrinho" />
             </Link>
         </nav>
     );

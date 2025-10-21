@@ -14,7 +14,7 @@ export default function Footer() {
                 <h2> Se Inscreva </h2>
                 <p> Coloque seu email e receba as <br /> melhores promoções </p>
                 <div className="email">
-                    <img className="ft_email" src="/email.png" alt="Ícone de e-mail" />
+                    <img className="ft_email" src="/Index/email.png" alt="Ícone de e-mail" />
                     <input className="formu" type="email" placeholder="Insira seu email" required name="email" />
                     <input className="form" type="submit" value="Inscrever" />
                 </div>

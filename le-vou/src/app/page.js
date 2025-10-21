@@ -5,10 +5,10 @@ export default function Home() {
     <>
       <article className={styles.article}>
         <section className={styles.sc_promo}>
-          <img className={styles.promocao} src="/promocao.png" alt="Promoção" />
+          <img className={styles.promocao} src="/Index/promocao.png" alt="Promoção" />
           <button className={styles.cupom}> <a href="#"> Use o cupom </a></button>
         </section>
-        <img className={styles.livros} src="/livros.png" alt="Diversos livros" />
+        <img className={styles.livros} src="/Index/livros.png" alt="Diversos livros" />
       </article>
 
       <h2 className={styles.h2}> Promoções </h2>
