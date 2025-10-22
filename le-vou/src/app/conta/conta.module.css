@@ -219,3 +219,99 @@
     border-radius: 8px;
     flex-shrink: 0;
 }*/
+
+
+@media (max-width: 768px) {
+    .conta {
+        max-width: 100%;
+        padding: 0 16px;
+        margin-top: 24px;
+    }
+
+    .perfil_decima {
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .editar_perfil {
+        width: auto;
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .perfil_pai {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 84px;
+        height: 84px;
+    }
+
+    .perfil_info {
+        padding: 0;
+        align-items: center;
+    }
+    .perfil_info h2 {
+        font-size: 18px;
+    }
+    .perfil_info p {
+        font-size: 13px;
+    }
+
+    .status {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    .status1 {
+        padding: 16px;
+    }
+    .status1 .value {
+        font-size: 20px;
+    }
+    .status1 .label {
+        font-size: 12px;
+    }
+
+    .pedidos {
+        margin-bottom: 24px;
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    .sessao_topo h3 {
+        font-size: 16px;
+    }
+    .sessao_topo button {
+        font-size: 13px;
+    }
+
+    .bio_texto {
+        font-size: 13px;
+    }
+
+    .generos_container {
+        margin: 0;
+        padding: 8px 0 0 0;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .genero_item {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .favoritos {
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+    .favoritos_lista {
+        gap: 12px;
+        padding-bottom: 12px;
+    }
+}

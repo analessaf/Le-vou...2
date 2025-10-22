@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import Image from 'next/image';
 import styles from './conta.module.css';
 
 export default function Conta() {
@@ -23,14 +24,14 @@ export default function Conta() {
     return (
         <section className={styles.conta}>
             <section className={styles.perfil_decima}>
-                <img className={styles.share_icon} src="/Conta/share.png" alt="compartilhar" />
+                <Image className={styles.share_icon} src="/Conta/share.png" alt="compartilhar" width={19} height={19} />
                 <button className={styles.editar_perfil} onClick={handleEditToggle}>
                     {isEditing ? 'Salvar Perfil' : 'Editar Perfil'}
                 </button>
             </section>
 
             <section className={styles.perfil_pai}>
-                <img className={styles.avatar} src="/Conta/helena.png" alt="Helena Alves" />
+                <Image className={styles.avatar} src="/Conta/helena.png" alt="Helena Alves" width={100} height={100} />
 
                 <section className={styles.perfil_info}>
                     {/* === NOME (Condicional) === */}
@@ -65,7 +66,7 @@ export default function Conta() {
                     <div className={styles.label}>LIVROS DISPONÍVEIS</div>
                 </section>
                 <section className={styles.status1}>
-                    <div className={styles.value}><img src="/Livros/estrela.png" alt="estrela" /> 3.2</div>
+                    <div className={styles.value}><Image src="/Livros/estrela.png" alt="estrela" width={20} height={20} /> 3.2</div>
                     <div className={styles.label}>AVALIAÇÃO MÉDIA</div>
                 </section>
                 <section className={styles.status1}>
@@ -109,7 +110,7 @@ export default function Conta() {
 
             <section className={styles.favoritos}>
                 <h2>Favoritados</h2>
-                <img src="/Conta/coração-icone.png" alt="coração" />
+                <Image src="/Conta/coração-icone.png" alt="coração" width={25} height={25} />
             </section>
             <section className={styles.favoritos_lista}>
                 <></>

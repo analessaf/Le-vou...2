@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Footer() {
     return (
         <footer>
@@ -14,7 +16,7 @@ export default function Footer() {
                 <h2> Se Inscreva </h2>
                 <p> Coloque seu email e receba as <br /> melhores promoções </p>
                 <div className="email">
-                    <img className="ft_email" src="/Index/email.png" alt="Ícone de e-mail" />
+                    <Image className="ft_email" src="/Index/email.png" alt="Ícone de e-mail" width={20} height={20} />
                     <input className="formu" type="email" placeholder="Insira seu email" required name="email" />
                     <input className="form" type="submit" value="Inscrever" />
                 </div>

@@ -93,3 +93,101 @@ footer h1 {
     width: 20px;
     padding-left: 10px;
 }
+
+nav {
+    align-items: center;
+    background: #fff;
+    z-index: 100;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    padding: 6px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+}
+
+.menu-toggle img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .nome-site {
+        display: none;
+    }
+
+    nav {
+        margin: 0;
+        padding: 10px 14px;
+        position: sticky;
+        top: 0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: 0;
+    }
+
+    .botao_carrinho {
+        order: 2;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav > a:not(.botao_carrinho) {
+        display: none;
+    }
+
+    nav[aria-expanded="true"] > a:not(.botao_carrinho) {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        padding: 12px 4px;
+        margin: 0;
+    }
+
+    nav[aria-expanded="true"]::after {
+        content: "";
+        display: block;
+        width: 100%;
+    }
+
+    #site-menu {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    #site-menu[aria-expanded="true"] > a:not(.botao_carrinho) {
+        background: #fff;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    #site-menu[aria-expanded="true"] .nome-site {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 14px;
+
+    }
+
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px;
+    }
+
+    .email {
+        max-width: 250px;
+    }
+}

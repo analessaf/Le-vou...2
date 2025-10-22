@@ -6,6 +6,7 @@
 .section {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .link {
     display: flex;
@@ -19,6 +20,7 @@
     margin-left: 90px;
     margin-right: 70px;
 }
+
 .genero_nome {
     font-weight: 500;
     margin-top: 10px;
@@ -63,6 +65,9 @@
     display: flex;
     justify-content: space-between;
 }
+.promo_img {
+    border-radius: 10px;
+}
 .mais_procurados {
     display: flex;
     flex-direction: column;
@@ -104,4 +109,98 @@
     margin-left: 5px;
     font-weight: 500;
     color: #3E3C3C;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pai_livros {
+        width: 100%;
+    }
+
+    .h2 {
+        margin: 16px;
+    }
+
+    .busca {
+        width: auto;
+        margin: 16px;
+        padding: 8px;
+    }
+
+    .perg {
+        width: 100%;
+        flex: 1 1 auto;
+    }
+
+    .form {
+        width: auto;
+        margin-left: 8px;
+        padding: 10px 16px;
+    }
+    .link {
+        width: auto;
+        margin: 8px 16px 0 16px;
+        gap: 12px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 8px;
+    }
+
+    .section {
+        align-items: center;
+        flex: 0 0 auto;
+        min-width: 90px;
+        scroll-snap-align: start;
+    }
+
+    .conj_promo {
+        width: auto;
+        margin: 12px 16px 0 16px;
+        gap: 12px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+
+    .promo_img {
+        flex: 0 0 auto;
+        width: 85vw !important;
+        height: auto !important;
+        max-width: 360px;
+        scroll-snap-align: start;
+    }
+
+    .mais_procurados {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .livro_mais_vendido {
+        margin: 12px 16px;
+        height: auto;
+        align-items: center;
+    }
+
+    .sobre_livro p {
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+    .sobre_livro h6 {
+        font-size: 12px;
+    }
+
+    .avaliacao {
+        height: auto;
+        width: auto;
+        align-items: center;
+    }
 }
