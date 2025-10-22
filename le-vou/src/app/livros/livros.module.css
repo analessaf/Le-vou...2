@@ -1,11 +1,107 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 .section {
     display: flex;
     flex-direction: column;
 }
 .link {
     display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
+    margin-left: 90px;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    width: 730px;
+}
+.h2 {
+    font-weight: 400;
+    margin-left: 90px;
+    margin-right: 70px;
+}
+.genero_nome {
+    font-weight: 500;
+    margin-top: 10px;
+    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+}
+.form {
+    border-style: none;
+    background-color: #829BFF;
+    color: white;
+    padding: 13px;
+    width: 100px;
+    font-size: small;
+    border-radius: 15px;
+}
+.perg {
+    border-radius: 15px;
+    border-style: none;
+    background-color: #E6E6E6;
+    padding: 10px;
+    padding-left: 20px;
+    width: 700px;
+    font-size: small;
+}
+.busca {
+    background-color: #E6E6E6;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    width: 750px;
+    margin-left: 70px;
+    margin-top: 30px;
+    box-shadow: 2px 2px 5px rgba(142, 141, 141, 0.5);
+}
+.pai_livros {
+    display: flex;
+    flex-direction: column;
+}
+.conj_promo {
+    width: 730px;
+    margin-left: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.mais_procurados {
+    display: flex;
+    flex-direction: column;
+}
+.livro_mais_vendido {
+    height: 167px;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+}
+.sobre_livro {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+.sobre_livro p {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-weight: 600;
+}
+.sobre_livro h6 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #3E3C3C;
+    font-weight: 600;
+}
+.avaliacao {
+    margin: 0px;
+    margin-top: 5px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+}
+.avaliacao p {
+    font-size: 10px;
+    margin-top: 2px;
+    margin-left: 5px;
+    font-weight: 500;
+    color: #3E3C3C;
 }
