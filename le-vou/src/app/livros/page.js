@@ -27,7 +27,7 @@ export default function Livros() {
         <container className={styles.container}>
             <container className={styles.pai_livros}>
                 <section className={styles.busca}>
-                    <input className={styles.perg} type="search" placeholder="digite"></input>
+                    <input className={styles.perg} type="search" placeholder=" Digite"></input>
                     <input className={styles.form} type="submit" value="Buscar"></input>
                 </section>
                 <h2 className={styles.h2}> Gêneros </h2>
@@ -42,7 +42,7 @@ export default function Livros() {
                     ))}
                 </section>
             </container>
-            <container class="mais_procurados">
+            <container className="mais_procurados">
                     <h2 className={styles.h2}> Mais Procurados </h2>
                     {maisProcurados.map(livro => (
                         <MaisProcurados key={livro.id} livro={livro}/>

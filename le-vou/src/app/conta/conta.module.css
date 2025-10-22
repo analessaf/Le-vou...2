@@ -1,0 +1,221 @@
+.conta {
+    max-width: 1000px;
+    margin: 2px auto;
+    margin-top: 40px;
+    padding: 0 1px;
+}
+
+.perfil_decima {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+.share_icon {
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.editar_perfil {
+    background: white;
+    width: 150px;
+    border-radius: 20px;
+    border: 3px solid #E4ECFF;
+    background-color: white;
+    padding: 10px;
+    color: #32ADE6;
+    font-size: medium;
+    box-shadow: 2px 2px 5px rgba(142, 141, 141, 0.5);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.perfil_pai {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #f2c94c;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+/* Campos de input para o modo de edição */
+.input_edit {
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.textarea_edit {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    min-height: 100px;
+    font-family: inherit;
+}
+
+.perfil_info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+.perfil_info h2 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.perfil_info p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.status {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.status1 {
+    flex: 1;
+    background: #eaf2ff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.status1 .value {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.status1 .value img {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.status1 .label {
+    font-size: 13px;
+    color: #555;
+    font-weight: 500;
+}
+
+.pedidos {
+    width: 100%;
+    padding: 16px;
+    border: 3px solid #E4ECFF;
+    border-radius: 20px;
+    background-color: white;
+    color: #32ADE6;
+    font-weight: bold;
+    font-size: medium;
+    cursor: pointer;
+    margin-bottom: 32px;
+    box-shadow: 2px 2px 5px rgba(142, 141, 141, 0.5);
+}
+
+.sessao {
+    margin-bottom: 32px;
+}
+
+.sessao_topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.sessao_topo h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sessao_topo button {
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.bio_texto {
+    font-size: 14px;
+    color: #555;
+}
+
+.generos_container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 32px;
+    padding: 15px;
+}
+
+.genero_item {
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-size: 16px;
+    border: none;
+}
+
+.genero_item.romance {
+    background: #f9b3d1;
+}
+
+.genero_item.suspense {
+    background: #a8d5a2;
+}
+
+.genero_item.ficcao {
+    background: #a3d2f0;
+}
+
+.favoritos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.favoritos h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.favoritos img {
+    width: 25px;
+    height: auto;
+    margin-right: 5px;
+}
+
+/* ESSE SERIA O CSS PARA AS IMAGENS DOS FAVORITOS \*
+/*.favoritos_lista {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 16px;
+}
+
+.favoritos_lista img {
+    width: 120px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}*/
