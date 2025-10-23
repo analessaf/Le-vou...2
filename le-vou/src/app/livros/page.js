@@ -5,11 +5,11 @@ import MaisProcurados from "../components/livro/MaisProcurados";
 
 export default function Livros() {
     const generos = [
-    { id: "fantasia", nome: "FANTASIA", caminhoImg: "/Livros/fantasia.png", link: "fantasia.html" },
-    { id: "romance", nome: "ROMANCE", caminhoImg: "/Livros/romance.png", link: "fantasia.html" },
-    { id: "terror", nome: "TERROR", caminhoImg: "/Livros/terror.png", link: "fantasia.html" },
-    { id: "comedia", nome: "COMÉDIA", caminhoImg: "/Livros/fantasia.png", link: "fantasia.html" },
-    { id: "suspense", nome: "SUSPENSE", caminhoImg: "/Livros/suspense.png", link: "fantasia.html" }
+        { id: "fantasia", nome: "FANTASIA", caminhoImg: "/Livros/fantasia.png", link: "fantasia.html" },
+        { id: "romance", nome: "ROMANCE", caminhoImg: "/Livros/romance.png", link: "fantasia.html" },
+        { id: "terror", nome: "TERROR", caminhoImg: "/Livros/terror.png", link: "fantasia.html" },
+        { id: "comedia", nome: "COMÉDIA", caminhoImg: "/Livros/fantasia.png", link: "fantasia.html" },
+        { id: "suspense", nome: "SUSPENSE", caminhoImg: "/Livros/suspense.png", link: "fantasia.html" }
     ];
     const promocoes = [
         { id: "promo1", nome:"promo1.png", caminhoImg:"/Livros/promo1.png"},

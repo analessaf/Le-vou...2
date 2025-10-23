@@ -1,0 +1,19 @@
+.cadastro {
+    width: 200px;
+    border-radius: 30px;
+    border: none;
+    background-color: #32ADE6;
+    padding: 10px;
+    color: white;
+    font-size: medium;
+    box-shadow: 2px 2px 5px rgba(142, 141, 141, 0.5);
+}
+
+.venda {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 100px;
+    margin-top: 30px;
+}
