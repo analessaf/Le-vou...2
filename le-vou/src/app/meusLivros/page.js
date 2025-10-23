@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import styles from "./meusLivros.module.css";
-import Popup from "../components/meusLivros/Popup"; // ajuste conforme sua estrutura
+import Popup from "../components/meusLivros/Popup";
 
 export default function MeusLivros() {
   const [popupAberto, setPopupAberto] = useState(false);
@@ -18,10 +18,7 @@ export default function MeusLivros() {
   return (
     <section className={styles.venda}>
       <h2>Livros à venda</h2>
-      <button className={styles.cadastro} onClick={abrirPopup}>
-        Cadastrar novo livro
-      </button>
-
+      <button className={styles.cadastro} onClick={abrirPopup}> Cadastrar novo livro </button>
       {popupAberto && <Popup fecharPopup={fecharPopup} />}
     </section>
   );
