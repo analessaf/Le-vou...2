@@ -46,8 +46,8 @@ Componentes React possuem uma "memória" interna chamada Estado (useState), o qu
 
 Com React na página /conta, eu implementei a funcionalidade de "Editar Perfil". Em vez de escrever um código complexo em JavaScript para selecionar elementos do DOM, criar inputs e substituir o HTML, simplesmente utilizamos um estado isEditing. O componente decide o que mostrar:
 
-Se isEditing for false, ele renderiza o texto (<h2>{nome}</h2>).
+Se isEditing for false, ele renderiza o texto (`<h2>{nome}</h2>`).
 
-Se isEditing for true, ele renderiza o formulário (<input value={nome}... />).
+Se isEditing for true, ele renderiza o formulário (`<input value={nome}... />`).
 
 Apenas mudamos o estado, e o React cuida de redesenhar a interface.
