@@ -1,4 +1,5 @@
 import styles from "./meusLivros.module.css";
+import Popup from "../components/meusLivros/Popup";
 
 export default function MeusLivros() {
     function abrirPopup() {
@@ -12,7 +13,7 @@ export default function MeusLivros() {
     return (
         <section className={styles.venda}>
             <h2> Livros à venda </h2>
-            <button className={styles.cadastro} onclick="abrirPopup()"> Cadastrar novo livro </button>
+            <button className={styles.cadastro} onclick={abrirPopup}> Cadastrar novo livro </button>
         </section>
     )
 }
