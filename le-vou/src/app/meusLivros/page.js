@@ -1,19 +1,28 @@
+"use client";
+import { useState } from "react";
 import styles from "./meusLivros.module.css";
-import Popup from "../components/meusLivros/Popup";
+import Popup from "../components/meusLivros/Popup"; // ajuste conforme sua estrutura
 
 export default function MeusLivros() {
-    function abrirPopup() {
-        document.getElementById("Popup").style.display = "block";
-    }
+  const [popupAberto, setPopupAberto] = useState(false);
 
-    function fecharPopup() {
-        document.getElementById("Popup").style.display = "none";
-    }
+  function abrirPopup() {
+    console.log("Abrindo popup!"); // teste
+    setPopupAberto(true);
+  }
 
-    return (
-        <section className={styles.venda}>
-            <h2> Livros à venda </h2>
-            <button className={styles.cadastro} onclick={abrirPopup}> Cadastrar novo livro </button>
-        </section>
-    )
+  function fecharPopup() {
+    setPopupAberto(false);
+  }
+
+  return (
+    <section className={styles.venda}>
+      <h2>Livros à venda</h2>
+      <button className={styles.cadastro} onClick={abrirPopup}>
+        Cadastrar novo livro
+      </button>
+
+      {popupAberto && <Popup fecharPopup={fecharPopup} />}
+    </section>
+  );
 }
