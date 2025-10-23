@@ -110,7 +110,7 @@ export default function Conta() {
 
             <section className={styles.favoritos}>
                 <h2>Favoritados</h2>
-                <Image src="/Conta/coração-icone.png" alt="coração" width={25} height={25} />
+                <Image className={styles.coracao} src="/Conta/coracao.png" alt="coração" width={25} height={25} />
             </section>
             <section className={styles.favoritos_lista}>
                 <></>
