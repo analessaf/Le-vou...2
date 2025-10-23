@@ -39,13 +39,16 @@ A utilização do React (utilizando o framework Next.js) para construir o "Lê-V
 
 ### 1. Reutilização e Manutenção Centralizada
 No HTML estático, elementos que se repetem em todas as páginas, como o menu de navegação e o rodapé, precisavam ser copiados e colados em todos os arquivos (index.html, livros.html, conta.html, etc.).
+
 Com React criamos o componente Header.js e Footer.js uma única vez. Ao inseri-lo no layout.js do Next.js, ele é automaticamente aplicado a todas as páginas do site. Agora, se eu precisar adicionar um novo link no menu, eu edito apenas um arquivo, e a mudança se reflete em todo o "Lê-Vou" instantaneamente.
 
 ### 2. Interatividade Poderosa com "Estado"
 Componentes React possuem uma "memória" interna chamada Estado (useState), o que torna a criação de interfaces interativas muito mais limpa.
+
 Com React na página /conta, eu implementei a funcionalidade de "Editar Perfil". Em vez de escrever um código complexo em JavaScript para selecionar elementos do DOM, criar inputs e substituir o HTML, simplesmente utilizamos um estado isEditing. O componente decide o que mostrar:
 
 Se isEditing for false, ele renderiza o texto (`<h2>{nome}</h2>`).
+
 Se isEditing for true, ele renderiza o formulário (`<input value={nome}... />`).
 
 Apenas mudamos o estado, e o React cuida de redesenhar a interface.
