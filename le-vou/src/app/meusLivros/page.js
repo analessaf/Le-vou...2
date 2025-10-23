@@ -3,11 +3,11 @@ import Popup from "../components/meusLivros/Popup";
 
 export default function MeusLivros() {
     function abrirPopup() {
-    document.getElementById("Popup").style.display = "block";
+        document.getElementById("Popup").style.display = "block";
     }
 
     function fecharPopup() {
-    document.getElementById("Popup").style.display = "none";
+        document.getElementById("Popup").style.display = "none";
     }
 
     return (

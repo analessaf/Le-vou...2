@@ -21,5 +21,5 @@ export default function Home() {
        {/* <section className={styles.grid-recomendados}></section> */}
       </article>
     </>
-  );
+  )
 }
