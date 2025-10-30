@@ -17,7 +17,7 @@ export default function MeusLivros() {
 
   return (
     <section className={styles.venda}>
-      <h2>Livros à venda</h2>
+      <h2 className={styles.h2}>Livros à venda</h2>
       <button className={styles.cadastro} onClick={abrirPopup}> Cadastrar novo livro </button>
       {popupAberto && <Popup fecharPopup={fecharPopup} />}
     </section>

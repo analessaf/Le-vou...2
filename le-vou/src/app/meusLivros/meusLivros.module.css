@@ -8,7 +8,11 @@
     font-size: medium;
     box-shadow: 2px 2px 5px rgba(142, 141, 141, 0.5);
 }
-
+.h2 {
+    font-weight: 400;
+    margin-left: 90px;
+    margin-right: 70px;
+}
 .venda {
     display: flex;
     height: 50px;
@@ -20,18 +24,11 @@
 .formu {
     border-radius: 30px;
     border-style: none;
-    background-color: #f8f7f7;
-    border-color: #f8f7f7;
+    background-color: #ece9e9;
+    border-color: #ece9e9;
     padding: 10px;
 }
 
-.form {
-    border-radius: 30px;
-    border-style: none;
-    background-color: #829BFF;
-    color: white;
-    padding: 10px;
-}
 .popup {
   position: fixed;
   z-index: 9999;
@@ -108,7 +105,3 @@
     border-radius: 20px;
 }
 
-.form_cad .formu {
-    background-color: #ece9e9;
-    width: 170px;
-}

@@ -14,16 +14,16 @@ export default function Popup({ fecharPopup }) {
           </section>
           <section className={styles.form_cad}>
             <p className={styles.f}>
-              Título: <input className="formu" type="text" placeholder="Digite o título" />
+              Título: <input className={styles.formu} type="text" placeholder="Digite o título" />
             </p>
             <p className={styles.f}>
-              Autor: <input className="formu" type="text" placeholder="Digite o autor" />
+              Autor: <input className={styles.formu} type="text" placeholder="Digite o autor" />
             </p>
             <p className={styles.f}>
-              Número de páginas: <input className="formu" type="number" placeholder="Digite o nº de páginas" />
+              Número de páginas: <input className={styles.formu} type="number" placeholder="Digite o nº de páginas" />
             </p>
             <p className={styles.f}>
-              Valor: <input className="formu" type="number" placeholder="Digite o valor" />
+              Valor: <input className={styles.formu} type="number" placeholder="Digite o valor" />
             </p>
             <p className={styles.f}>
               Condição:
@@ -32,10 +32,10 @@ export default function Popup({ fecharPopup }) {
               <input type="checkbox" value="regular" /> Regular
             </p>
             <p className={styles.f}>
-              Descrição: <input className="formu" type="text" placeholder="Digite a descrição" />
+              Descrição: <input className={styles.formu} type="text" placeholder="Digite a descrição" />
             </p>
             <p className={styles.f}>
-              Add fotos: <input className="formu" type="text" placeholder="Adicione as imagens" />
+              Add fotos: <input className={styles.formu} type="text" placeholder="Adicione as imagens" />
             </p>
           </section>
         </div>
