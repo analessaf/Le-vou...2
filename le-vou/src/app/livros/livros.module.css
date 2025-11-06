@@ -75,7 +75,9 @@
 .livro_pop {
     width: 500px;
     display: flex;
-    justify-content: space-between;
+
+    flex-wrap: wrap;
+    gap: 0px;
     margin-bottom: 10px;
 }
 .populares {

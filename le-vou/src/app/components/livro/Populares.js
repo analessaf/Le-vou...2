@@ -13,8 +13,8 @@ export default function Populares({ genero }) {
       <Image
         src={capaUrl}
         alt={`Capa do livro ${genero.title}`}
-        width={110}
-        height={160}
+        width={90}
+        height={140}
         className={styles.capa}
       />
     </section>

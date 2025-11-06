@@ -58,12 +58,7 @@ export default function Livros() {
                 <container className={styles.pai_livros_pop}>
                     <container className={styles.populares}>
                         <section className={styles.livro_pop}>
-                            {livros.map(livro => (
-                                <Populares key={livro.key} genero={livro} />
-                            ))}
-                        </section>
-                        <section className={styles.livro_pop}>
-                            {livros.map(livro => (
+                            {livros.slice(0, 8).map(livro => (
                                 <Populares key={livro.key} genero={livro} />
                             ))}
                         </section>
