@@ -1,0 +1,58 @@
+.livro_pop {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.populares {
+    width: 500px;
+    margin-left: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.capa {
+  border-radius: 8px;
+  margin-bottom: 8px;
+  object-fit: cover;
+}
+
+.info {
+  text-align: center;
+}
+
+.titulo {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 4px 0;
+  color: #333;
+}
+
+.autor {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.preco {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #32ADE6;
+  margin-top: 6px;
+}

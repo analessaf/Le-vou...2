@@ -68,6 +68,17 @@
 .promo_img {
     border-radius: 10px;
 }
+.conj_pop {
+        display: flex;
+        flex-direction: column;
+}
+.populares {
+    width: 500px;
+    margin-left: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
 .mais_procurados {
     display: flex;
     flex-direction: column;

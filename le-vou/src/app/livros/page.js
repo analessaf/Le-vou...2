@@ -1,7 +1,10 @@
+"use client";
+import { useState, useEffect } from "react";
 import styles from "./livros.module.css";
 import Genero from "../components/livro/Genero";
 import Promocao from "../components/livro/Promocao";
 import MaisProcurados from "../components/livro/MaisProcurados";
+import Populares from "../components/livro/Populares";
 
 export default function Livros() {
     const generos = [
@@ -22,7 +25,16 @@ export default function Livros() {
         { id: "livro3", caminhoImg: "/Livros/mais_vend3.png", titulo: "Todo Esse Tempo", autor: "Mikki Daughtry", avaliacao: "4.6" },
         { id: "livro4", caminhoImg: "/Livros/mais_vend4.png", titulo: "Trono de Vidro", autor: "Sarah J. Maas", avaliacao: "4.6" }
     ];
+    const [livros, setLivros] = useState([])
 
+    useEffect(() => {
+        fetch("https://openlibrary.org/people/arturg/lists/OL312562L/editions.json")
+            .then((res) => res.json())
+            .then((dado) => {
+                setLivros(dado.entries)
+            })
+    }, [])
+    
     return (
         <container className={styles.container}>
             <container className={styles.pai_livros}>
@@ -39,6 +51,12 @@ export default function Livros() {
                 <section className={styles.conj_promo}>
                     {promocoes.map(promo => (
                         <Promocao key={promo.id} promo={promo} />
+                    ))}
+                </section>
+                <h2 className={styles.h2}> Livros Populares </h2>
+                <section className={styles.conj_pop}>
+                    {livros.map(livro => (
+                        <Populares key={livro.key} genero={livro} />
                     ))}
                 </section>
             </container>
