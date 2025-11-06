@@ -29,7 +29,7 @@ export default function Livros() {
     const [livros, setLivros] = useState([])
 
     useEffect(() => {
-        fetch("https://openlibrary.org/people/arturg/lists/OL312562L/editions.json")
+        fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json")
             .then((res) => res.json())
             .then((dado) => {
                 setLivros(dado.entries)
