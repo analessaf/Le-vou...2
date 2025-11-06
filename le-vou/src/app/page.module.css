@@ -50,6 +50,8 @@
     display: flex;
     margin-left: 70px;
     margin-right: 70px;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .promo_livros {
