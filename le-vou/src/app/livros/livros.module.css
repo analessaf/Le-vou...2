@@ -70,7 +70,13 @@
 }
 .conj_pop {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+}
+.livro_pop {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 .populares {
     width: 500px;
@@ -78,6 +84,11 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+}
+.pai_livros_pop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .mais_procurados {
     display: flex;

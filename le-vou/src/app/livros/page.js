@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import styles from "./livros.module.css";
 import Genero from "../components/livro/Genero";
 import Promocao from "../components/livro/Promocao";
@@ -54,11 +55,23 @@ export default function Livros() {
                     ))}
                 </section>
                 <h2 className={styles.h2}> Livros Populares </h2>
-                <section className={styles.conj_pop}>
-                    {livros.map(livro => (
-                        <Populares key={livro.key} genero={livro} />
-                    ))}
-                </section>
+                <container className={styles.pai_livros_pop}>
+                    <container className={styles.populares}>
+                        <section className={styles.livro_pop}>
+                            {livros.map(livro => (
+                                <Populares key={livro.key} genero={livro} />
+                            ))}
+                        </section>
+                        <section className={styles.livro_pop}>
+                            {livros.map(livro => (
+                                <Populares key={livro.key} genero={livro} />
+                            ))}
+                        </section>
+                    </container>
+                    <section>
+                        <Image src="/Livros/promo3.png" alt="promo" width={200} height={383}></Image>
+                    </section>
+                </container>
             </container>
             <container className="mais_procurados">
                     <h2 className={styles.h2}> Mais Procurados </h2>

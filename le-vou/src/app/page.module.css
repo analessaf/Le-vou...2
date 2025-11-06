@@ -72,6 +72,8 @@
     padding-bottom: 20px;
     padding-top: 5px;
     box-shadow: 2px -2px 5px rgba(185, 185, 185, 0.5);
+    margin-left: 70px;
+    margin-right: 70px;
 }
 
 .recomendados h2 {
@@ -86,42 +88,9 @@
     margin-top: 10px;
 }
 
-.titulos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.titulos p {
-    margin-bottom: 0;
-}
-
-.autores {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: smaller;
-    color: #3E3C3C;
-}
-
-.autores p {
-    margin: 0;
-}
-
-.valores {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 50px;
-    margin-right: 50px;
-    font-size: large;
-    font-weight: bold;
-    color: #516EE3;
-    margin-bottom: 20px;
-}
-
-.valores p {
-    margin-top: 10px;
+.filho_recomendados {
+  display: flex;
+  gap: 16px;               
 }
 
 @media (max-width: 768px) {

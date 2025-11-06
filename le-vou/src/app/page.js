@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
 import Populares from "./components/livro/Populares";
+import Recomendados from "./components/index/Recomendados";
 
 export default function Home() {
 
@@ -42,7 +43,7 @@ export default function Home() {
           e crie um card "Populares" para cada um.
           (Note que a prop 'genero' do seu componente é o nosso 'livro')
         */}
-        {!loading && livros.slice(0, 7).map((livro) => (
+        {!loading && livros.slice(0, 3).map((livro) => (
           <Populares key={livro.key} genero={livro} />
         ))}
       </section>
@@ -53,13 +54,11 @@ export default function Home() {
         {/* Se estiver carregando, mostre uma mensagem */}
         {loading && <p className={styles.p}>Carregando recomendados...</p>}
 
-        {/* Aqui pegamos os próximos 4 livros (do índice 4 ao 8)
-          para não repetir os da promoção.
-        */}
-        {!loading && livros.slice(4, 8).map((livro) => (
-          <Populares key={livro.key} genero={livro} />
-        ))}
-
+        <section className={styles.filho_recomendados}>
+          {!loading && livros.slice(0, 3).map((livro) => (
+            <Recomendados key={livro.key} genero={livro} />
+          ))}
+        </section>
       </article>
     </>
   );
