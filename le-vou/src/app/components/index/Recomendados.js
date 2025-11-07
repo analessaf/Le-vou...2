@@ -32,8 +32,8 @@ export default function Recomendados({ genero }) {
       <Image
         src={capaUrl}
         alt={`Capa do livro ${genero.title}`}
-        width={150}
-        height={220}
+        width={180}
+        height={250}
         className={styles.capa}
       />
       <section className={styles.info}>

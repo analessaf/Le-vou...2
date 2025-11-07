@@ -90,7 +90,9 @@
 
 .filho_recomendados {
   display: flex;
-  gap: 16px;               
+  gap: 16px;
+  margin-left: 15px;  
+  flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {

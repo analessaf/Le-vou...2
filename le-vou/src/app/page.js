@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
-import Populares from "./components/livro/Populares";
 import Recomendados from "./components/index/Recomendados";
+import Promocoes from "./components/index/Promocoes";
 
 export default function Home() {
 
@@ -12,7 +12,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true); // Começa como "carregando" 
 
   useEffect(() => {
-    fetch("https://openlibrary.org/people/arturg/lists/OL312562L/editions.json")
+    fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json")
       .then((res) => res.json())
       .then((dado) => {
         setLivros(dado.entries); // Salvamos a lista de livros no estado
@@ -43,8 +43,8 @@ export default function Home() {
           e crie um card "Populares" para cada um.
           (Note que a prop 'genero' do seu componente é o nosso 'livro')
         */}
-        {!loading && livros.slice(0, 3).map((livro) => (
-          <Populares key={livro.key} genero={livro} />
+        {!loading && livros.slice(0, 8).map((livro) => (
+          <Promocoes key={livro.key} genero={livro} />
         ))}
       </section>
 
@@ -55,7 +55,7 @@ export default function Home() {
         {loading && <p className={styles.p}>Carregando recomendados...</p>}
 
         <section className={styles.filho_recomendados}>
-          {!loading && livros.slice(0, 3).map((livro) => (
+          {!loading && livros.slice(0, 12).map((livro) => (
             <Recomendados key={livro.key} genero={livro} />
           ))}
         </section>
