@@ -5,8 +5,7 @@ import styles from "../../meusLivros/meusLivros.module.css";
 
 export default function Vendidos({ livro }) {
   const [autor, setAutor] = useState("");
-
-  // A API retorna o autor apenas com uma chave, então vamos buscar o nome real:
+  
   useEffect(() => {
     if (livro.authors && livro.authors.length > 0) {
       const autorKey = livro.authors[0].key;
@@ -19,10 +18,9 @@ export default function Vendidos({ livro }) {
     }
   }, [livro]);
 
-  // Imagem da capa (ou imagem padrão se não existir)
   const capaUrl = livro.covers
     ? `https://covers.openlibrary.org/b/id/${livro.covers[0]}-M.jpg`
-    : "/sem-capa.png"; // Coloque uma imagem "sem-capa.png" na pasta public/
+    : "/sem-capa.png";
 
   const preco = (Math.random() * 60 + 20).toFixed(2);
 

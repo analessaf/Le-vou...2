@@ -19,12 +19,10 @@ export default function Recomendados({ genero }) {
     }
   }, [genero]);
 
-  // Imagem da capa (ou imagem padrão se não existir)
   const capaUrl = genero.covers
     ? `https://covers.openlibrary.org/b/id/${genero.covers[0]}-M.jpg`
-    : "/sem-capa.png"; // Coloque uma imagem "sem-capa.png" na pasta public/
+    : "/sem-capa.png";
 
-  // Preço fictício (pode remover se quiser)
   const preco = (Math.random() * 60 + 20).toFixed(2);
 
   return (
