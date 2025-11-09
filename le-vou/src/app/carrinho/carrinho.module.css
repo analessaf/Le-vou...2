@@ -1,0 +1,77 @@
+.pai_carrinho {
+    display: flex;
+    flex-direction: row;
+    margin-left: 70px;
+    gap: 30px;
+}
+
+.titulo_carrinho {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 300px;
+}
+.img_livro_carrinho {
+    width: 150px;
+    border-radius: 5px;
+}
+.h2 {
+    font-weight: 400;
+    margin-left: 90px;
+    margin-right: 70px;
+}
+.livro_carrinho {
+    height: 230px;
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+}
+.sobre_livro_carrinho {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 15px;
+}
+.preco {
+    display: flex;
+    align-items: flex-end;
+}
+.carrinho_autor h6 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #3E3C3C;
+    font-weight: 600;
+}
+.carrinho_autor p {
+    margin-bottom: 5px;
+    font-weight: 600;
+
+}
+.preco p {
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #516EE3;
+}
+.caixa_resumo {
+    background-color: #829BFF;
+    color: white;
+    border-radius: 20px;
+    width: 350px;
+    height: 250px;
+    padding: 15px;
+    padding-left: 30px;
+    margin-left: 100px;
+}
+.total {
+    font-weight: bold;
+}
+.formu_carrinho {
+    width: 320px;
+    border-radius: 30px;
+    border-style: none;
+    background-color: #f8f7f7;
+    border-color: #f8f7f7;
+    padding: 10px;
+}

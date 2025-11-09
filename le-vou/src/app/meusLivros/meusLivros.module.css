@@ -104,4 +104,88 @@
     padding-top: 5px;
     border-radius: 20px;
 }
+.vendidos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: 220px;
+    margin-left: 90px;
+}
+.livro_vendido {
+    height: 167px;
+    margin-left: 100px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+}
 
+.sobre_livro h4 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.sobre_livro h6 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #3E3C3C;
+    font-weight: 600;
+}
+.sobre_livro p {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-weight: 600;
+}
+
+.venda_livro {
+    width: 150px;
+    margin-right: 10px;
+}
+/* .vender {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  flex: 1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+} */
+
+.estado {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.estado h5 {
+    background-color: #34C759;
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.vender p {
+    margin-top: 70px;
+    width: 300px;
+}
+.card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 520px;
+  height: 180px;
+  margin: 30px auto;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding-bottom: 80px;
+  gap: 20px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+}

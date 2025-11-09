@@ -69,11 +69,11 @@
     border-radius: 10px;
 }
 .conj_pop {
-        display: flex;
-        flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 .livro_pop {
-    width: 500px;
+    width: 550px;
     display: flex;
 
     flex-wrap: wrap;
@@ -82,7 +82,7 @@
 }
 .populares {
     width: 500px;
-    margin-left: 80px;
+    margin-left: 70px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
