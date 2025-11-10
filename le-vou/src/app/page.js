@@ -3,25 +3,39 @@ import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
-import Recomendados from "./components/index/Recomendados";
 import Promocoes from "./components/index/Promocoes";
+import Recomendados from "./components/index/Recomendados";
+import {shuffleArray} from "../utils/arrayHelpers";
 
 export default function Home() {
 
-  const [livros, setLivros] = useState([]); // Começa como uma lista vazia
-  const [loading, setLoading] = useState(true); // Começa como "carregando" 
+  const [livrosPromocao, setLivrosPromocao] = useState([]);
+  const [livrosRecomendados, setLivrosRecomendados] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json")
-      .then((res) => res.json())
-      .then((dado) => {
-        setLivros(dado.entries); // Salvamos a lista de livros no estado
-        setLoading(false); // Paramos de carregar
+    // API para Promoções (a que você escolheu)
+    const fetchPromocoes = fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json")
+      .then((res) => res.json());
+
+    // API para Recomendados
+    const fetchRecomendados = fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json")
+      .then((res) => res.json());
+
+    // 3. Espera as duas chegarem
+    Promise.all([fetchPromocoes, fetchRecomendados])
+      .then(([dadoPromocao, dadoRecomendado]) => {
+        
+        // 4. EMBARALHA CADA LISTA
+        const promocoesEmbaralhadas = shuffleArray(dadoPromocao.entries);
+        const recomendadosEmbaralhados = shuffleArray(dadoRecomendado.entries);
+
+        // 5. Salva nos estados separados
+        setLivrosPromocao(promocoesEmbaralhadas);
+        setLivrosRecomendados(recomendadosEmbaralhados);
+        
+        setLoading(false);
       })
-      .catch((error) => {
-        console.error("Falha ao buscar livros:", error);
-        setLoading(false); // Paramos de carregar, mesmo se der erro
-      });
   }, []);
 
   return (
@@ -31,7 +45,7 @@ export default function Home() {
           <Image className={styles.promocao} src="/Index/promocao.png" alt="Promoção" width={450} height={127} />
           <button className={styles.cupom}> <Link href="#"> Use o cupom </Link></button>
         </section>
-        <Image className={styles.livros} src="/Index/livros.png" alt="Diversos livros" width={300} height={200} />
+        <Image className={styles.livros} src="/Index/livros.png" alt="Diversos livros" width={700} height={200} />
       </article>
 
       <h2 className={styles.h2}> Promoções </h2>
@@ -39,11 +53,9 @@ export default function Home() {
         {/* Se estiver carregando, mostre uma mensagem */}
         {loading && <p className={styles.p}>Carregando promoções...</p>}
 
-        {/* Quando não estiver carregando, pegue os 4 primeiros livros
-          e crie um card "Populares" para cada um.
-          (Note que a prop 'genero' do seu componente é o nosso 'livro')
-        */}
-        {!loading && livros.slice(0, 8).map((livro) => (
+        {/* Quando não estiver carregando, pegue os 8 primeiros livros
+          e crie um card "Populares" para cada um.*/}
+        {!loading && livrosPromocao.slice(0, 10).map((livro) => (
           <Promocoes key={livro.key} genero={livro} />
         ))}
       </section>
@@ -51,11 +63,10 @@ export default function Home() {
       <article className={styles.recomendados}>
         <h2 className={styles.h2}>Recomendados</h2>
 
-        {/* Se estiver carregando, mostre uma mensagem */}
         {loading && <p className={styles.p}>Carregando recomendados...</p>}
 
         <section className={styles.filho_recomendados}>
-          {!loading && livros.slice(0, 12).map((livro) => (
+          {!loading && livrosRecomendados.slice(0, 16).map((livro) => (
             <Recomendados key={livro.key} genero={livro} />
           ))}
         </section>

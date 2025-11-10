@@ -1,16 +1,29 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './conta.module.css';
+import Favoritos from '../components/conta/Favoritos';
+import { shuffleArray } from "../../utils/arrayHelpers";
+
 
 export default function Conta() {
-
+    const [livros, setLivros] = useState([]);
     const [isEditing, setIsEditing] = useState(false);
 
     const [nome, setNome] = useState("HELENA ALVES");
     const [email, setEmail] = useState("helena.alves@gmail.com.br");
     const [bio, setBio] = useState("Amo livros, vcs não sabem quanto um livro salva vidas!!");
-    // const [fotoUrl, setFotoUrl] = useState("/Conta/helena.png"); 
+
+    useEffect(() => {
+        fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json")
+            .then((res) => res.json())
+            .then((dado) => {
+                const listaFavoritos = shuffleArray(dado.entries);
+
+                setLivros(listaFavoritos);
+
+            });
+    }, []);
 
     // botão "Editar/Salvar"
     function handleEditToggle() {
@@ -66,7 +79,7 @@ export default function Conta() {
                     <div className={styles.label}>LIVROS DISPONÍVEIS</div>
                 </section>
                 <section className={styles.status1}>
-                    <div className={styles.value}><Image src="/Livros/estrela.png" alt="estrela" width={20} height={20} /> 3.2</div>
+                    <div className={styles.value}><Image src="/Livros/estrela.png" alt="estrela" width={20} height={20} /> 4.7</div>
                     <div className={styles.label}>AVALIAÇÃO MÉDIA</div>
                 </section>
                 <section className={styles.status1}>
@@ -113,7 +126,9 @@ export default function Conta() {
                 <Image className={styles.coracao} src="/Conta/coracao.png" alt="coração" width={25} height={25} />
             </section>
             <section className={styles.favoritos_lista}>
-                <></>
+                {livros.slice(0, 13).map((livro) => (
+                    <Favoritos key={livro.key} livro={livro} />
+                ))}
             </section>
         </section>
     );

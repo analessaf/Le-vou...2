@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "./meusLivros.module.css";
 import Popup from "../components/meusLivros/Popup";
 import Vendidos from "../components/meusLivros/Vendidos";
+import {shuffleArray} from "../../utils/arrayHelpers";
 
 export default function MeusLivros() {
   const [popupAberto, setPopupAberto] = useState(false);
@@ -22,10 +23,13 @@ export default function MeusLivros() {
     fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json")
       .then((res) => res.json())
       .then((dado) => {
-        const livrosComEstado = dado.entries.map((livro, index) => ({
+        const listaEmbaralhada = shuffleArray(dado.entries);
+        const livrosComEstado = listaEmbaralhada.map((livro, index) => ({
           ...livro,
           estado: estados[index % estados.length],
         }));
+        
+        // 5. Salva nos estados separados
         setLivros(livrosComEstado);
       });
   }, []);

@@ -8,7 +8,7 @@ export default function Promocoes({ genero }) {
     : "/sem-capa.png";
 
   return (
-    <section className={styles.card}>
+    <section>
       <Image
         src={capaUrl}
         alt={`Capa do livro ${genero.title}`}

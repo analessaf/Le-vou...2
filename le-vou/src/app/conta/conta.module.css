@@ -204,19 +204,14 @@
     margin-right: 5px;
 }
 
-/* ESSE SERIA O CSS PARA AS IMAGENS DOS FAVORITOS \*
-/*.favoritos_lista {
+.favoritos_lista {
     display: flex;
-    gap: 16px;
     overflow-x: auto;
-    padding-bottom: 16px;
 }
 
 .favoritos_lista img {
-    width: 120px;
-    border-radius: 8px;
-    flex-shrink: 0;
-}*/
+    width: 150px;
+}
 
 
 @media (max-width: 768px) {
