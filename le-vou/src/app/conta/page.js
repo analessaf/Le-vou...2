@@ -30,7 +30,7 @@ export default function Conta() {
         if (isEditing) {
             console.log("Salvando dados:", { nome, email, bio });
         }
-        // Inverte o estado
+        // inverte o estado
         setIsEditing(!isEditing);
     }
 
@@ -47,7 +47,6 @@ export default function Conta() {
                 <Image className={styles.avatar} src="/Conta/helena.png" alt="Helena Alves" width={100} height={100} />
 
                 <section className={styles.perfil_info}>
-                    {/* === NOME (Condicional) === */}
                     {isEditing ? (
                         <input
                             type="text"
@@ -59,7 +58,6 @@ export default function Conta() {
                         <h2>{nome}</h2>
                     )}
 
-                    {/* === EMAIL (Condicional) === */}
                     {isEditing ? (
                         <input
                             type="email"
@@ -93,11 +91,10 @@ export default function Conta() {
             <section className={styles.sessao}>
                 <section className={styles.sessao_topo}>
                     <h3>Minha Bio</h3>
-                    {/* Oculta o botão "Escrever" durante a edição */}
+                    // oculta o botão "Escrever"
                     {!isEditing && <button>Escrever ➔</button>}
                 </section>
 
-                {/* === BIO (Condicional) === */}
                 {isEditing ? (
                     <textarea
                         value={bio}

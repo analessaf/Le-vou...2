@@ -29,7 +29,7 @@ export default function MeusLivros() {
           estado: estados[index % estados.length],
         }));
         
-        // 5. Salva nos estados separados
+        // salva nos estados separados
         setLivros(livrosComEstado);
       });
   }, []);

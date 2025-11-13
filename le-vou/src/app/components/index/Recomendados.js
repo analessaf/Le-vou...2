@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 export default function Recomendados({ genero }) {
   const [autor, setAutor] = useState("");
 
-  // A API retorna o autor apenas com uma chave, então vamos buscar o nome real:
   useEffect(() => {
     if (genero.authors && genero.authors.length > 0) {
       const autorKey = genero.authors[0].key;

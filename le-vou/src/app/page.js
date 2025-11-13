@@ -14,23 +14,21 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // API para Promoções (a que você escolheu)
-    const fetchPromocoes = fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json")
+    const fetchPromocoes = fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json?limit=30")
       .then((res) => res.json());
 
-    // API para Recomendados
-    const fetchRecomendados = fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json")
+    const fetchRecomendados = fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json?limit=30")
       .then((res) => res.json());
 
-    // 3. Espera as duas chegarem
+    // espera as duas chegarem
     Promise.all([fetchPromocoes, fetchRecomendados])
       .then(([dadoPromocao, dadoRecomendado]) => {
         
-        // 4. EMBARALHA CADA LISTA
+        // embaralha cada lista
         const promocoesEmbaralhadas = shuffleArray(dadoPromocao.entries);
         const recomendadosEmbaralhados = shuffleArray(dadoRecomendado.entries);
 
-        // 5. Salva nos estados separados
+        // salva
         setLivrosPromocao(promocoesEmbaralhadas);
         setLivrosRecomendados(recomendadosEmbaralhados);
         
@@ -50,11 +48,10 @@ export default function Home() {
 
       <h2 className={styles.h2}> Promoções </h2>
       <section className={styles.livro_promo}>
-        {/* Se estiver carregando, mostre uma mensagem */}
+        // se estiver carregando, mostre a mensagem
         {loading && <p className={styles.p}>Carregando promoções...</p>}
 
-        {/* Quando não estiver carregando, pegue os 8 primeiros livros
-          e crie um card "Populares" para cada um.*/}
+        // se não, pegue os livros e crie um card para cada um
         {!loading && livrosPromocao.slice(0, 10).map((livro) => (
           <Promocoes key={livro.key} genero={livro} />
         ))}

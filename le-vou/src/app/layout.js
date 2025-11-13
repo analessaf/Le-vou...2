@@ -13,7 +13,6 @@ export default function LayoutBase({ children }) {
       <body>
         <Header />
 
-        {/* 'children' é onde o conteúdo da sua página (page.js) será renderizado */}
         <main>{children}</main>
 
         <Footer />
