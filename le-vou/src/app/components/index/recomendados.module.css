@@ -43,3 +43,33 @@
   color: #32ADE6;
   margin-top: 6px;
 }
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 4px) !important;
+    max-width: calc(50% - 4px);
+    flex: 0 0 calc(50% - 4px);
+    margin: 0;
+    padding: 8px 4px;
+    box-sizing: border-box;
+  }
+
+  .capa {
+    width: 100% !important;
+    height: auto !important;
+    margin: 4px auto 8px;
+    max-width: 100%;
+  }
+
+  .titulo {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .autor {
+    font-size: 0.75rem;
+  }
+
+  .preco {
+    font-size: 0.85rem;
+  }
+}

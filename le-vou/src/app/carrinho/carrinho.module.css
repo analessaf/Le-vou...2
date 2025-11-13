@@ -75,3 +75,142 @@
     border-color: #f8f7f7;
     padding: 10px;
 }
+@media (max-width: 768px) {
+    .pai_carrinho {
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .titulo_carrinho {
+        flex-direction: column;
+        margin-right: 20px;
+        gap: 10px;
+    }
+
+    .titulo_carrinho .h2:last-child {
+        display: none;
+    }
+
+    .h2 {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 1.2rem;
+    }
+
+    .compras {
+        width: 100%;
+    }
+
+    .livro_carrinho {
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .img_livro_carrinho {
+        width: 120px;
+        margin-bottom: 15px;
+        object-fit: contain;
+        height: auto;
+    }
+
+    .sobre_livro_carrinho {
+        width: 100%;
+        flex-direction: column;
+        margin-left: 0;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .carrinho_autor {
+        width: 100%;
+    }
+
+    .carrinho_autor p {
+        font-size: 0.95rem;
+    }
+
+    .carrinho_autor h6 {
+        font-size: 0.85rem;
+    }
+
+    .preco {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .preco p {
+        font-size: 1.1rem;
+    }
+
+    .resumo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .caixa_resumo {
+        width: 90%;
+        max-width: 350px;
+        margin-left: 0;
+        height: auto;
+        padding: 20px;
+    }
+
+    .formu_carrinho {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .h2 {
+        font-size: 1rem;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .pai_carrinho {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .livro_carrinho {
+        padding: 10px;
+    }
+
+    .img_livro_carrinho {
+        width: 100px;
+    }
+
+    .carrinho_autor p {
+        font-size: 0.85rem;
+    }
+
+    .carrinho_autor h6 {
+        font-size: 0.75rem;
+    }
+
+    .preco p {
+        font-size: 1rem;
+    }
+
+    .caixa_resumo {
+        width: 95%;
+        padding: 15px;
+        padding-left: 20px;
+        font-size: 0.9rem;
+    }
+
+    .formu_carrinho {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+}

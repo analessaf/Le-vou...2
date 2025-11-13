@@ -1,0 +1,151 @@
+.container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.titulo {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.descricao {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 50px;
+}
+
+.livros_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 30px;
+    margin: 0 70px;
+}
+
+.livro_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.livro_card:hover {
+    transform: translateY(-5px);
+}
+
+.livro_img {
+    width: 150px;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.livro_titulo {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 40px;
+}
+
+.livro_preco {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #516EE3;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header {
+        margin-bottom: 30px;
+    }
+
+    .titulo {
+        font-size: 1.5rem;
+    }
+
+    .descricao {
+        font-size: 1rem;
+    }
+
+    .livros_grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 20px;
+        margin: 0 20px;
+    }
+
+    .livro_img {
+        width: 120px;
+        height: 180px;
+    }
+
+    .livro_titulo {
+        font-size: 0.85rem;
+        min-height: 35px;
+    }
+
+    .livro_preco {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .titulo {
+        font-size: 1.3rem;
+    }
+
+    .descricao {
+        font-size: 0.9rem;
+    }
+
+    .livros_grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 15px;
+        margin: 0 15px;
+    }
+
+    .livro_img {
+        width: 100px;
+        height: 150px;
+    }
+
+    .livro_titulo {
+        font-size: 0.8rem;
+        min-height: 30px;
+    }
+
+    .livro_preco {
+        font-size: 0.85rem;
+    }
+}

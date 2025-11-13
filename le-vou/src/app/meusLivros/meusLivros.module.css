@@ -189,3 +189,214 @@
   transform: translateY(-6px);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
 }
+@media (max-width: 768px) {
+  .h2 {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 1.2rem;
+  }
+
+  .venda {
+    flex-direction: column;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    height: auto;
+    gap: 15px;
+  }
+
+  .cadastro {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .vendidos {
+    margin-right: 20px;
+    margin-left: 20px;
+    justify-content: center;
+  }
+
+  .livro_vendido {
+    margin-left: 0;
+    margin-top: 30px;
+    height: auto;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .venda_livro {
+    width: 100px;
+    margin-right: 15px;
+    object-fit: contain;
+    height: auto;
+  }
+
+  .sobre_livro p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+
+  .sobre_livro h4 {
+    font-size: 1rem;
+  }
+
+  .sobre_livro h6 {
+    font-size: 0.85rem;
+  }
+
+  .estado h5 {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .vender p {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 350px;
+    height: auto;
+    padding: 15px;
+    padding-bottom: 20px;
+    margin: 20px auto;
+  }
+
+  .popup_conteudo {
+    width: 95%;
+    max-width: 500px;
+    padding: 15px;
+    max-height: 90%;
+  }
+
+  .popup_conteudo h2 {
+    margin-left: 10px;
+    font-size: 1.3rem;
+  }
+
+  .agrup_form {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ft_livro {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .ft_livro img {
+    width: 140px;
+    margin-bottom: 20px;
+  }
+
+  .form_cad {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .f {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    align-items: flex-start;
+  }
+
+  .formu {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+  }
+
+  .fechar_popup {
+    font-size: 32px;
+  }
+  
+  .f input[type="checkbox"] {
+    margin: 5px 5px 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .h2 {
+    font-size: 1rem;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .cadastro {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .vendidos {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .livro_vendido {
+    max-width: 300px;
+  }
+
+  .venda_livro {
+    width: 80px;
+    object-fit: contain;
+    height: auto;
+  }
+
+  .sobre_livro p {
+    font-size: 0.8rem;
+  }
+
+  .sobre_livro h4 {
+    font-size: 0.9rem;
+  }
+
+  .sobre_livro h6 {
+    font-size: 0.75rem;
+  }
+
+  .estado h5 {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  .popup_conteudo {
+    width: 98%;
+    padding: 10px;
+  }
+
+  .popup_conteudo h2 {
+    font-size: 1.1rem;
+    margin-left: 5px;
+  }
+
+  .ft_livro img {
+    width: 120px;
+  }
+
+  .f {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+
+  .formu {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+
+  .card {
+    width: 95%;
+    max-width: 300px;
+  }
+  
+  .f input[type="checkbox"] {
+    margin: 3px 5px 3px 0;
+  }
+}
