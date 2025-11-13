@@ -822,3 +822,87 @@ O código declara uma variável vazia para guardar livros (`livros`) e, assim qu
 1º `.then()` → Converte os dados brutos recebidos para o formato JSON.
 
 2º `.then()` → Salva a lista de livros (`dado.entries`) no estado (`setLivros`), o que faz o React atualizar a tela.
+
+
+# Lógica Reutilizável: A Função shuffleArray
+Durante o desenvolvimento do "Lê-Vou", notamos que certas lógicas, como "embaralhar uma lista", seriam necessárias em várias páginas (como na "Home" e em "Meus Livros"). Em vez de copiar e colar o mesmo código em vários arquivos, criamos uma pasta src/utils para centralizar essa função fazendo ela se tornar reutilizável.
+
+## A Função Utilitária (src/utils/arrayHelpers.js)
+Este arquivo contém a lógica de embaralhamento. Ele usa o algoritmo Fisher-Yates, que é uma forma eficiente de garantir uma aleatoriedade real na lista.
+```
+// src/utils/arrayHelpers.js
+export function shuffleArray(array) {
+  // Copia o array para não modificar o original
+  let newArray = [...array]; 
+  // Loop de trás para frente
+  for (let i = newArray.length - 1; i > 0; i--) {
+    // Escolhe um índice aleatório (j)
+    const j = Math.floor(Math.random() * (i + 1));
+    
+    // Troca os elementos de lugar
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  // Retorna o array embaralhado
+  return newArray;
+}
+```
+## Aplicando a Função na Página (src/app/page.js)
+Na página Home, seguimos um processo simples para usar essa função e garantir que os livros sempre apareçam em ordem aleatória. O processo é:
+
+######import: "puxamos" a função shuffleArray para dentro do componente.
+######useEffect: A API busca as listas de livros.
+######Assim que os dados chegam (dentro do .then()), chamamos shuffleArray() para embaralhar a lista antes de salvá-la.
+######setLivros...: Salvamos a lista já embaralhada no estado do React.
+
+```JavaScript
+// src/app/page.js
+
+"use client";
+import { useState, useEffect } from "react";
+// ... (outros imports de componentes) ...
+
+// 1. A função é importada do nosso arquivo utilitário
+// (O caminho sobe 2 níveis para sair de 'app' e entrar em 'utils')
+import { shuffleArray } from "../../utils/arrayHelpers"; 
+
+export default function Home() {
+  
+  const [livrosPromocao, setLivrosPromocao] = useState([]);
+  const [livrosRecomendados, setLivrosRecomendados] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // 2. useEffect busca os dados
+  useEffect(() => {
+    const fetchPromocoes = fetch("...url_promocoes...")
+      .then((res) => res.json());
+
+    const fetchRecomendados = fetch("...url_recomendados...")
+      .then((res) => res.json());
+
+    Promise.all([fetchPromocoes, fetchRecomendados])
+      .then(([dadoPromocao, dadoRecomendado]) => {
+        
+        // Verificação de segurança caso a API falhe
+        const listaPromocoes = (dadoPromocao && Array.isArray(dadoPromocao.entries)) 
+          ? dadoPromocao.entries : [];
+        const listaRecomendados = (dadoRecomendado && Array.isArray(dadoRecomendado.entries)) 
+          ? dadoRecomendado.entries : [];
+
+        // 3. A função é chamada aqui para embaralhar os dados
+        const promocoesEmbaralhadas = shuffleArray(listaPromocoes);
+        const recomendadosEmbaralhados = shuffleArray(listaRecomendados);
+
+        // 4. Salvamos a lista JÁ EMBARALHADA no estado
+        setLivrosPromocao(promocoesEmbaralhadas);
+        setLivrosRecomendados(recomendadosEmbaralhados);
+        
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("FALHA GERAL NO FETCH:", error);
+        setLoading(false);
+      });
+  }, []); 
+
+  // ... (resto do seu return JSX) ...
+}```
