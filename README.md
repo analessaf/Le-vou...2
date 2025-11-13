@@ -42,7 +42,7 @@ No HTML estático, elementos que se repetem em todas as páginas, como o menu de
 
 Com React criamos o componente Header.js e Footer.js uma única vez. Ao inseri-lo no layout.js do Next.js, ele é automaticamente aplicado a todas as páginas do site. Agora, se eu precisar adicionar um novo link no menu, eu edito apenas um arquivo, e a mudança se reflete em todo o "Lê-Vou" instantaneamente.
 
-### 2. Interatividade Poderosa com "Estado"
+### 2. Interatividade com "Estado"
 Componentes React possuem uma "memória" interna chamada Estado (useState), o que torna a criação de interfaces interativas muito mais limpa.
 
 Com React na página /conta, eu implementei a funcionalidade de "Editar Perfil". Em vez de escrever um código complexo em JavaScript para selecionar elementos do DOM, criar inputs e substituir o HTML, simplesmente utilizamos um estado isEditing. O componente decide o que mostrar:
@@ -738,3 +738,4 @@ Se o gênero não existir no mapeamento, exibe o nome da URL em maiúsculas e um
 ```
 
 **Explicação:** Redefine cada .card para ocupar exatamente 50% da largura do container (subtraindo 4px para gaps), forçando um layout de 2 colunas; utiliza flex: 0 0 calc(50% - 4px) para evitar que o card cresça ou encolha além do definido; define .capa com 100% de largura e height auto, permitindo que a imagem se ajuste proporcionalmente; reduz font-sizes de título, autor e preço para melhor legibilidade em telas estreitas.
+
