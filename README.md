@@ -827,7 +827,7 @@ O código declara uma variável vazia para guardar livros (`livros`) e, assim qu
 ## Lógica Reutilizável: A Função shuffleArray
 Durante o desenvolvimento do "Lê-Vou", notamos que certas lógicas, como "embaralhar uma lista", seriam necessárias em várias páginas (como na "Home" e em "Meus Livros"). Em vez de copiar e colar o mesmo código em vários arquivos, criamos uma pasta src/utils para centralizar essa função fazendo ela se tornar reutilizável.
 
-### A Função Utilitária (src/utils/arrayHelpers.js)
+### (src/utils/arrayHelpers.js)
 Este arquivo contém a lógica de embaralhamento. Ele usa o algoritmo Fisher-Yates, que é uma forma eficiente de garantir uma aleatoriedade real na lista.
 ```
 // src/utils/arrayHelpers.js
@@ -861,8 +861,7 @@ Na página Home, seguimos um processo simples para usar essa função e garantir
 import { useState, useEffect } from "react";
 // ... (outros imports de componentes) ...
 
-// 1. A função é importada do nosso arquivo utilitário
-// (O caminho sobe 2 níveis para sair de 'app' e entrar em 'utils')
+// A função é importada do nosso arquivo
 import { shuffleArray } from "../../utils/arrayHelpers"; 
 
 export default function Home() {
@@ -871,7 +870,7 @@ export default function Home() {
   const [livrosRecomendados, setLivrosRecomendados] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // 2. useEffect busca os dados
+  // useEffect busca os dados
   useEffect(() => {
     const fetchPromocoes = fetch("...url_promocoes...")
       .then((res) => res.json());
@@ -881,27 +880,17 @@ export default function Home() {
 
     Promise.all([fetchPromocoes, fetchRecomendados])
       .then(([dadoPromocao, dadoRecomendado]) => {
-        
-        // Verificação de segurança caso a API falhe
-        const listaPromocoes = (dadoPromocao && Array.isArray(dadoPromocao.entries)) 
-          ? dadoPromocao.entries : [];
-        const listaRecomendados = (dadoRecomendado && Array.isArray(dadoRecomendado.entries)) 
-          ? dadoRecomendado.entries : [];
 
-        // 3. A função é chamada aqui para embaralhar os dados
-        const promocoesEmbaralhadas = shuffleArray(listaPromocoes);
-        const recomendadosEmbaralhados = shuffleArray(listaRecomendados);
+        // a função é chamada aqui para embaralhar os dados
+        const promocoesEmbaralhadas = shuffleArray(dadoPromocao.entries);
+        const recomendadosEmbaralhados = shuffleArray(dadoRecomendado.entries);
 
-        // 4. Salvamos a lista JÁ EMBARALHADA no estado
+        // salva
         setLivrosPromocao(promocoesEmbaralhadas);
         setLivrosRecomendados(recomendadosEmbaralhados);
         
         setLoading(false);
       })
-      .catch((error) => {
-        console.error("FALHA GERAL NO FETCH:", error);
-        setLoading(false);
-      });
   }, []); 
 
   // ... (resto do seu return JSX) ...
