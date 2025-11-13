@@ -48,10 +48,8 @@ export default function Home() {
 
       <h2 className={styles.h2}> Promoções </h2>
       <section className={styles.livro_promo}>
-        // se estiver carregando, mostre a mensagem
         {loading && <p className={styles.p}>Carregando promoções...</p>}
 
-        // se não, pegue os livros e crie um card para cada um
         {!loading && livrosPromocao.slice(0, 10).map((livro) => (
           <Promocoes key={livro.key} genero={livro} />
         ))}
