@@ -739,3 +739,86 @@ Se o gênero não existir no mapeamento, exibe o nome da URL em maiúsculas e um
 
 **Explicação:** Redefine cada .card para ocupar exatamente 50% da largura do container (subtraindo 4px para gaps), forçando um layout de 2 colunas; utiliza flex: 0 0 calc(50% - 4px) para evitar que o card cresça ou encolha além do definido; define .capa com 100% de largura e height auto, permitindo que a imagem se ajuste proporcionalmente; reduz font-sizes de título, autor e preço para melhor legibilidade em telas estreitas.
 
+## Estruturas comuns utilizadas em grande parte do código
+
+```javascript
+               <section className={styles.link}>
+                   {generos.map(genero => (
+                       <Genero key={genero.id} genero={genero} />
+                   ))}
+               </section>
+               <section className={styles.conj_promo}>
+                   {promocoes.map(promo => (
+                       <Promocao key={promo.id} promo={promo} />
+                   ))}
+               </section>
+               <h2 className={styles.h2}> Livros Populares </h2>
+               <container className={styles.pai_livros_pop}>
+                   <container className={styles.populares}>
+                       <section className={styles.livro_pop}>
+                           {livros.slice(0, 8).map(livro => (
+                               <Populares key={livro.key} genero={livro} />
+                           ))}
+                       </section>
+                   </container>
+                   <section>
+                       <Image src="/Livros/promo3.png" alt="promo" width={200} height={383}></Image>
+                   </section>
+               </container>
+```
+
+No trecho generos.map, o código pega a lista completa de gêneros (`generos`) e constrói um componente de link clicável (`<Genero />`) para cada um deles, os exibindo de maneira organizada dentro de uma seção.
+
+`.map(...)`: é um método para iterar sobre cada item de um array, ou seja, para cada item dentro do array `generos`, ele executa a função que está dentro dos parênteses.
+
+Os outros trechos desse código possuem uma estrutura similar, com o mesmo propósito.
+
+No trecho livros.slice(0, 8)..., o código seleciona apenas os 8 primeiros livros da lista completa (`livros.slice(0, 8)`) e renderiza um componente visual(`<Populares />`) para cada um desses 8 livros dentro da seção. 
+
+`.slice(0, 8)`: é um método que cria um novo array contendo apenas uma parte do array original. (`0`: indica o índice inicial, `8`: indica o índice final)
+
+
+### Rota dinâmica utilizada em Gêneros:
+
+```javascript
+const Genero = ({ genero }) => {
+   return (
+       <Link key={genero.id} href={`/genero/${genero.id}`}>
+           <section className={styles.section}>
+               <Image alt={genero.nome} src={genero.caminhoImg} width={80} height={80}></Image>
+               <p className={styles.genero_nome}> {genero.nome} </p>
+           </section>
+       </Link>
+   )
+};
+export default Genero;
+```
+`<Link>`: é um componente especial do Next.js usado para navegação no lado do cliente.
+
+`href={/genero/${genero.id}}`: é o ponto chave da rota dinâmica, construindo um caminho de URL usando o valor do id específico do objeto `genero`.
+
+O componente `Genero` é um bloco de interface reutilizável. Ele recebe informações de um único gênero e o transforma em um botão de navegação que leva o usuário a uma página detalhada sobre aquele gênero específico.
+
+
+## Uso de API de livros:
+
+```javascript
+const [livros, setLivros] = useState([])
+
+
+useEffect(() => {
+   fetch("https://openlibrary.org/people/julialonghi/lists/OL313056L/editions.json")
+           .then((res) => res.json())
+           .then((dado) => {
+               setLivros(dado.entries)
+           })
+   }, [])
+```
+
+O código declara uma variável vazia para guardar livros (`livros`) e, assim que a página carrega, ele busca a lista de livros na internet e salva essa lista na variável, usando (`setLivros`)
+
+`fetch(...)`: Inicia a busca dos dados da lista de livros no endereço da Open Library.
+
+1º `.then()` → Converte os dados brutos recebidos para o formato JSON.
+
+2º `.then()` → Salva a lista de livros (`dado.entries`) no estado (`setLivros`), o que faz o React atualizar a tela.
