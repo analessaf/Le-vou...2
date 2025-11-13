@@ -91,7 +91,6 @@ export default function Conta() {
             <section className={styles.sessao}>
                 <section className={styles.sessao_topo}>
                     <h3>Minha Bio</h3>
-                    // oculta o botão "Escrever"
                     {!isEditing && <button>Escrever ➔</button>}
                 </section>
 
