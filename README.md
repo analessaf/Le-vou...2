@@ -824,10 +824,10 @@ O código declara uma variável vazia para guardar livros (`livros`) e, assim qu
 2º `.then()` → Salva a lista de livros (`dado.entries`) no estado (`setLivros`), o que faz o React atualizar a tela.
 
 
-# Lógica Reutilizável: A Função shuffleArray
+## Lógica Reutilizável: A Função shuffleArray
 Durante o desenvolvimento do "Lê-Vou", notamos que certas lógicas, como "embaralhar uma lista", seriam necessárias em várias páginas (como na "Home" e em "Meus Livros"). Em vez de copiar e colar o mesmo código em vários arquivos, criamos uma pasta src/utils para centralizar essa função fazendo ela se tornar reutilizável.
 
-## A Função Utilitária (src/utils/arrayHelpers.js)
+### A Função Utilitária (src/utils/arrayHelpers.js)
 Este arquivo contém a lógica de embaralhamento. Ele usa o algoritmo Fisher-Yates, que é uma forma eficiente de garantir uma aleatoriedade real na lista.
 ```
 // src/utils/arrayHelpers.js
@@ -846,13 +846,13 @@ export function shuffleArray(array) {
   return newArray;
 }
 ```
-## Aplicando a Função na Página (src/app/page.js)
+### Aplicando a Função na Página (src/app/page.js)
 Na página Home, seguimos um processo simples para usar essa função e garantir que os livros sempre apareçam em ordem aleatória. O processo é:
 
-######import: "puxamos" a função shuffleArray para dentro do componente.
-######useEffect: A API busca as listas de livros.
-######Assim que os dados chegam (dentro do .then()), chamamos shuffleArray() para embaralhar a lista antes de salvá-la.
-######setLivros...: Salvamos a lista já embaralhada no estado do React.
+###### import: "puxamos" a função shuffleArray para dentro do componente.
+###### useEffect: A API busca as listas de livros.
+###### Assim que os dados chegam (dentro do .then()), chamamos shuffleArray() para embaralhar a lista antes de salvá-la.
+###### setLivros...: Salvamos a lista já embaralhada no estado do React.
 
 ```JavaScript
 // src/app/page.js
