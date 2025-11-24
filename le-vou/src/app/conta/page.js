@@ -73,16 +73,16 @@ export default function Conta() {
 
             <section className={styles.status}>
                 <section className={styles.status1}>
-                    <div className={styles.value}>5</div>
-                    <div className={styles.label}>LIVROS DISPONÍVEIS</div>
+                    <section className={styles.value}>5</section>
+                    <section className={styles.label}>LIVROS DISPONÍVEIS</section>
                 </section>
                 <section className={styles.status1}>
-                    <div className={styles.value}><Image src="/Livros/estrela.png" alt="estrela" width={20} height={20} /> 4.7</div>
-                    <div className={styles.label}>AVALIAÇÃO MÉDIA</div>
+                    <section className={styles.value}><Image src="/Livros/estrela.png" alt="estrela" width={20} height={20} /> 4.7</section>
+                    <section className={styles.label}>AVALIAÇÃO MÉDIA</section>
                 </section>
                 <section className={styles.status1}>
-                    <div className={styles.value}>10</div>
-                    <div className={styles.label}>LIVROS VENDIDOS</div>
+                    <section className={styles.value}>10</section>
+                    <section className={styles.label}>LIVROS VENDIDOS</section>
                 </section>
             </section>
 
